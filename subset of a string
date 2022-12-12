@@ -1,0 +1,32 @@
+package practice;
+import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+import java.util.Stack;
+public class pattern {
+ static ArrayList<String> result=new ArrayList<>();
+	public static void main(String[] args) {
+		String str="abc";
+		ArrayList<String> one=findSub("",str);
+		System.out.println(one);
+	}
+
+	private static ArrayList<String> findSub(String string, String str) {
+		
+		if(str.isEmpty())
+		{
+			result.add(string);
+			return result;
+		}
+		char ch=str.charAt(0);
+		findSub(string+ch,str.substring(1));
+		findSub(string,str.substring(1));
+		return result;
+	}
+}
