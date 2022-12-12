@@ -1,0 +1,47 @@
+package practice;
+import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+import java.util.Stack;
+public class pattern {
+
+	public static void main(String[] args) {
+		String str="mypencil";
+		String str1="encilmyp";
+		String text=str+str;
+		System.out.println(check(text,str1));
+		
+	}
+
+	private static boolean check(String text, String str1) {
+		int i=0,j=0,count=0;
+		while(i<text.length())
+		{
+			if(j<str1.length() && text.charAt(i)==str1.charAt(j))
+			{
+				count++;
+				if(count==str1.length())
+				{
+					return true;
+				}
+				i++;
+				j++;
+			}
+			else
+			{
+				count=0;
+				j=0;
+				i++;
+			}
+		}
+		System.out.println(count);
+		
+		return false;
+	}
+}
